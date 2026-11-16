@@ -1,0 +1,29 @@
+# KNN classification with dataset included
+
+from sklearn.neighbors import KNeighborsClassifier
+
+ 
+
+X = [[150, 50], [160, 55], [170, 70], [180, 80]]
+
+y = ['A', 'A', 'B', 'B']
+
+ 
+
+model = KNeighborsClassifier(n_neighbors=3)
+
+model.fit(X, y)
+
+ 
+
+sample = [[165, 60]]
+
+print("Dataset:", X)
+
+print("Labels:", y)
+
+print("New Sample:", sample[0])
+
+print("Predicted Class:", model.predict(sample)[0])
+
+print("Training Accuracy:", model.score(X, y) * 100, "%")
