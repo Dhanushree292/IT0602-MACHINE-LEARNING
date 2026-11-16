@@ -1,0 +1,31 @@
+# Linear Regression for salary prediction
+
+from sklearn.linear_model import LinearRegression
+
+ 
+
+X = [[1], [2], [3], [4], [5]]  # Experience in years
+
+y = [25000, 35000, 45000, 55000, 65000]  # Salary in rupees
+
+ 
+
+model = LinearRegression()
+
+model.fit(X, y)
+
+ 
+
+sample = [[6]]
+
+print("Experience:", [v[0] for v in X])
+
+print("Salary:", y)
+
+print("Predicted Salary for 6 years:", round(model.predict(sample)[0], 2))
+
+print("Regression Coefficient:", model.coef_[0])
+
+print("Intercept:", model.intercept_)
+
+print("R2 Score:", model.score(X, y))
