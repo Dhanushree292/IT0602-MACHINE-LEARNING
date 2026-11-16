@@ -1,0 +1,29 @@
+# Logistic Regression for pass/fail prediction
+
+from sklearn.linear_model import LogisticRegression
+
+ 
+
+X = [[1], [2], [3], [4], [5], [6], [7], [8]]
+
+y = ['Fail', 'Fail', 'Fail', 'Pass', 'Pass', 'Pass', 'Pass', 'Pass']
+
+ 
+
+model = LogisticRegression()
+
+model.fit(X, y)
+
+ 
+
+sample = [[4]]
+
+print("Study Hours:", [v[0] for v in X])
+
+print("Results:", y)
+
+print("New Study Hours:", sample[0][0])
+
+print("Predicted Result:", model.predict(sample)[0])
+
+print("Training Accuracy:", model.score(X, y) * 100, "%")
